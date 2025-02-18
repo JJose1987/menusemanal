@@ -1,0 +1,91 @@
+/* Styles */
+body {
+   font-family: monospace;
+   font-size: 1vmax;
+   line-height: 1.5vmax;
+   margin: 0.1%;
+   text-align: left;
+   vertical-align: top;
+   background-color: #f8f9fa;
+   color: #333;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+}
+
+/* Table */
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 90%;
+    margin-left: 5%;
+    border: solid #000000 0.1vmax;
+}
+/* Row */
+.table div {
+    display: table-row;
+}
+
+/* Estilo para la primera fila (encabezado) */
+.table > div:first-child div {
+    //font-weight: bold;
+}
+
+/* Cell */
+.table div div {
+    display: table-cell;
+    border: solid #000000 0.1vmax;
+    vertical-align: middle;
+    padding: 0.7%;
+}
+
+/* p0 */
+#p0 .table div div input, #p0 .table div div select[multiple], #p0 .table div div textarea {
+    width: 98%;
+}
+
+#p0 .table div div select[multiple], #p0 .table div div textarea {
+    height: 5.5vmax;
+    resize: none;
+}
+
+/* d_flatware */
+#d_flatware {
+    margin-left: 24%;
+    margin-top: 2%;
+    width: 70%;
+}
+
+/* menu */
+.material-symbols-outlined {
+    font-size: 3vmax;
+    color: #555;
+    margin-right: 0.5vmax;
+}
+
+.material-symbols-outlined:hover{
+    font-weight: bold;
+}
+
+.menu {
+    background: #ffffff;
+    padding: 1vmax;
+    margin: 1vmax;
+    padding-right: 3vmax;
+    border-radius: 1vmax;
+    box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.1);
+    width: auto;
+
+    position: fixed;
+    top: 10%; 
+    left: 10%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.menu div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
