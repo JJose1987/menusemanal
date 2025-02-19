@@ -3,6 +3,13 @@
 // Variables
 var time = ['desayunar', 'tentempié', 'almorzar', 'merendar', 'cenar'];
 var ways = ['cocer'    , 'freír'    , 'hornear' , 'asar'    , 'guisar', 'sofreír', 'vaporizar', 'grillar', 'saltear', 'estofar'];
+
+// Nombre Mes
+var name_month = Array.from({length: 12}, (_, i) => (new Intl.DateTimeFormat(userLanguage, {month: 'long' }).format(new Date(0, i))).capitalize());
+// Nombre Día Semana
+var name_week  = Array.from({length:  7}, (_, i) => (new Intl.DateTimeFormat(userLanguage, {weekday: 'long' }).format((new Date()).addDays(0, i + 1))).capitalize());
+
+var k_flatware = {0: [], 1: [], 2: [], 3: [], 4: []};
 /*
     Ingredientes
         Frutas
@@ -182,7 +189,7 @@ var ingredients = [
     {type: 'other'     , name: 'ajo'            , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
     {type: 'other'     , name: 'cebolla'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
     {type: 'other'     , name: 'champiñon'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'other'     , name: 'cacao'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0]            , nweek:  7, uweek: 0, buy: 0}
+    {type: 'other'     , name: 'cacao'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0]            , nweek: 21, uweek: 0, buy: 0}
 ];
 // Funciones
 function main() {
@@ -230,6 +237,8 @@ function main() {
         }));
     });
 
+    $('#d_flatware').html((flatware().replaceAll(' ' , '&nbsp;')).replaceAll('\n' , '<br />'));
+
     update();
 }
 
@@ -247,6 +256,8 @@ function update() {
 
 // Generar menu semanal
 function flatware() {
+    // Resesera platos
+    k_flatware = {0: [], 1: [], 2: [], 3: [], 4: []};
     // Inicalizar ingredientes
     $.each(ingredients, function(index, item) {
         item.uweek = 0;
@@ -255,15 +266,7 @@ function flatware() {
     // Variables
     var fec  = new Date();
     var out  = 'Menu planificado para los siguientes días: \n';
-    // Nombre Mes
-    var name_month = Array.from({length: 12}, (_, i) => (new Intl.DateTimeFormat(userLanguage, {month: 'long' }).format(new Date(0, i))).capitalize());
-    // Nombre Día Semana
-    var name_week  = Array.from({length:  7}, (_, i) => (new Intl.DateTimeFormat(userLanguage, {weekday: 'long' }).format((new Date()).addDays(0, i + 1))).capitalize());
 
-    // Platos comunes
-    var breakfast = plat(0);
-    var snack     = plat(1);
-    var picnic    = plat(3);
     // Almuerzo y Cena
     var eat       = [];
     var dinner    = [];
@@ -286,41 +289,47 @@ function flatware() {
         fec = fec.addDays(1);
         var [y, M, d] = (fec.toISOString()).match(/\d+/g);
         out += '\n' + (' ').repeat(4) + name_week [[5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())]] + ' ' + d + ' de ' + name_month[parseInt(M - 1)] + ' del ' + y + '.';
+        
+        var t = 0;
+        var aux = '';
 
-        var breakfast = plat(0);
-        out += '\n' + (' ').repeat(8) + 'Para ' + (time[0] + (' ').repeat(10 - time[0].length)) + ': ' + breakfast;
-        setBuy(breakfast);
-        //setUweek(breakfast);
+        aux = plat(t);
+        out += '\n' + (' ').repeat(8) + 'Para ' + (time[t] + (' ').repeat(10 - time[t].length)) + ': ' + aux;
+        setBuy(aux);
+        //setUweek(aux);
+        k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
 
-        var snack     = plat(1);
-        out += '\n' + (' ').repeat(8) + 'Para ' + (time[1] + (' ').repeat(10 - time[1].length)) + ': ' + snack;
-        setBuy(snack);
-        //setUweek(snack);
+        aux = plat(++t);
+        out += '\n' + (' ').repeat(8) + 'Para ' + (time[t] + (' ').repeat(10 - time[t].length)) + ': ' + aux;
+        setBuy(aux);
+        //setUweek(aux);
+        k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
 
-        out += '\n' + (' ').repeat(8) + 'Para ' + (time[2] + (' ').repeat(10 - time[2].length)) + ': ' + eat[[0, 1, 0, 1, 2, 3, 2, 3][i0]];
-        setBuy(eat[[0, 1, 0, 1, 2, 3, 2, 3][i0]]);
-        setUweek(eat[[0, 1, 0, 1, 2, 3, 2, 3][i0]]);
+        ++t;
+        aux = eat[[0, 1, 0, 1, 2, 3, 2, 3][i0]]
+        out += '\n' + (' ').repeat(8) + 'Para ' + (time[t] + (' ').repeat(10 - time[t].length)) + ': ' + aux;
+        setBuy(aux);
+        setUweek(aux);
+        k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
 
-        var picnic    = plat(3);
-        out += '\n' + (' ').repeat(8) + 'Para ' + (time[3] + (' ').repeat(10 - time[3].length)) + ': ' + picnic;
-        setBuy(picnic);
-        //setUweek(picnic);
+        aux = plat(++t);
+        out += '\n' + (' ').repeat(8) + 'Para ' + (time[t] + (' ').repeat(10 - time[t].length)) + ': ' + aux;
+        setBuy(aux);
+        //setUweek(aux);
+        k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
 
-        out += '\n' + (' ').repeat(8) + 'Para ' + (time[4] + (' ').repeat(10 - time[4].length)) + ': ' + dinner[[0, 1, 0, 1, 2, 3, 2, 3][i0]];
-        setBuy(dinner[[0, 1, 0, 1, 2, 3, 2, 3][i0]]);
-        setUweek(dinner[[0, 1, 0, 1, 2, 3, 2, 3][i0]]);
+        ++t;
+        aux = dinner[[0, 1, 0, 1, 2, 3, 2, 3][i0]]
+        out += '\n' + (' ').repeat(8) + 'Para ' + (time[t] + (' ').repeat(10 - time[t].length)) + ': ' + aux;
+        setBuy(aux);
+        //setUweek(aux);
+        k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
     }
 
     // Generar compra
-    var taux0 = $.grep(ingredients, function(table) {
-        return table.buy > 0;
-    });
+    out += setShoppingList();
 
-    out += '\n\n' + (' ').repeat(4) + 'Hay que comprar:';
-    for (var i0 = 0; i0 < taux0.length; i0++) {
-        out += '\n' + (' ').repeat(8) + ((taux0[i0]['buy'] > 9?'':'0') + taux0[i0]['buy']) + ' ' + taux0[i0]['name'].capitalize() + '.';
-    }
-
+/*
     // Generar balance semanal
     out += '\n\n' + (' ').repeat(4) + 'Balance semanal:';
 
@@ -349,6 +358,7 @@ function flatware() {
             out += '\n' + (' ').repeat(8) + ant;
         }
     }
+    */
 
     return out;
 }
@@ -505,6 +515,35 @@ function plat(i_time = 0) {
     out = out.concat(getIngredients(kwargs));
 
     return out.join(', ') + '.';
+}
+
+// Generar lista de la compra
+function setShoppingList() {
+    var out = '';
+
+    // Inicalizar ingredientes
+    $.each(ingredients, function(index, item) {
+        item.uweek = 0;
+        item.buy = 0;
+    });
+
+    // Informar elementos comprados
+    for (var i0 = 0; i0 <= 7; i0++) {
+        for (var i1 = 0; i1 <= 4; i1++) { 
+            setBuy(k_flatware[i1][i0].join(', ') + '.');
+        }
+    }
+
+    var taux0 = $.grep(ingredients, function(table) {
+        return table.buy > 0;
+    });
+
+    out += '\n\n' + (' ').repeat(4) + 'Hay que comprar:';
+    for (var i0 = 0; i0 < taux0.length; i0++) {
+        out += '\n' + (' ').repeat(8) + ((taux0[i0]['buy'] > 9?'':'0') + taux0[i0]['buy']) + ' ' + taux0[i0]['name'].capitalize() + '.';
+    }
+    
+    return out;
 }
 
 // Devolver ingredientes

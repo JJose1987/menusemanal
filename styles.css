@@ -52,9 +52,11 @@ body {
 
 /* d_flatware */
 #d_flatware {
-    margin-left: 24%;
+    margin-left: 22%;
     margin-top: 2%;
-    width: 70%;
+    resize: none;
+    width: 75%;
+    height:5vmax;
 }
 
 /* menu */
