@@ -220,33 +220,26 @@ function main() {
             $('.edit').hide();
         }
     });
-    // 
-    $('span').on('click', function(e) {
-        var d_flatware =  '';
-
-        if (($(this).text()).indexOf('Generar aleatorio') != -1) {
-            d_flatware = flatware(ka);
-            $('#d_flatware').html(d_flatware);
-
-        } else if (($(this).text()).indexOf('Enviar') != -1) {
-            ka['html']       = false;
-            ka['k_flatware'] = k_flatware;
-            d_flatware = flatware(ka);
-
-            // Crea un lugar temporal para guardar el valor a copiar
-            var $temp = $('<textarea>').val(d_flatware).appendTo('body').select();
-            // Ejecuta el evento copiar
-            document.execCommand('copy');
-            // Borra temporal
-            $temp.remove();
-
-            toast('Texto copiado', 3000);
-        }
-        
+    
+    // Generar aleatorio
+    $('.menu div span:nth-child(2)').on('click', function(e) {
+        $('#d_flatware').html(flatware(ka));
     });
-    //
-    $('input[type=text], textarea')
-        .attr('autocomplete', 'off');
+    
+    // Enviar
+    $('.menu div span:nth-child(4)').on('click', function(e) {
+        ka['html']       = false;
+        ka['k_flatware'] = k_flatware;
+
+        // Crea un lugar temporal para guardar el valor a copiar
+        var $temp = $('<textarea>').val(flatware(ka)).appendTo('body').select();
+        // Ejecuta el evento copiar
+        document.execCommand('copy');
+        // Borra temporal
+        $temp.remove();
+
+        toast('Texto copiado', 3000);
+    });
 
     $('#d_flatware').html(flatware(ka));
 
@@ -724,6 +717,7 @@ function getType(name = '') {
 function setPlat() {
     // Generar un array con lo selecionado
     var taux = [];
+
     $.each($('[name=ingredients]').val(), function(i, item) {
         taux = taux.concat(ingredients[parseInt(item)].name);
     });
@@ -750,9 +744,12 @@ function showPlat(id = '', fec = '') {
     
     $('#ediv').html('Editar el ' + fec + '.<br />Para ' + time[t] + '.');
     
+    // Borrar los selecionados previamente
+    $('[name=ingredients]:selected').remove();
+    
     // Seleccionamos aquello que corresponda a ese dia
     $.each(k_flatware[t][iw], function(i, item) {
         var i_value = ingredients.findIndex(ingredients => ingredients.name.capitalize() === item.capitalize());
-        $('[name=ingredients] option').eq(i_value + 1).prop('selected', true);
+        $('[name=ingredients] option').eq(i_value).prop('selected', true);
     });
 }
