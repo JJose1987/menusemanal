@@ -103,8 +103,17 @@ a:active {
     select[multiple] {
         width: 90%;
         font-family: monospace;
-        margin-bottom:0.5vmax;
-        height:1vmax;
+        margin-bottom: 0.5vmax;
+        height: 1vmax;
         padding: 0.5vmax;
+    }
+    
+    .win {
+        top: 0.1vh; /* Empieza un poco más abajo del borde superior */
+
+        position: fixed;
+        width: 10%; /* Ajusta el ancho según sea necesario */
+        left: 0.1%; /* Centrado horizontal usando porcentajes */
+        z-index: 0;
     }
 }
