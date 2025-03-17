@@ -14,42 +14,6 @@ body {
     cursor: pointer;
 }
 
-/* Table */
-.table {
-    display: table;
-    table-layout: fixed;
-    width: 90%;
-    margin-left: 5%;
-    border: solid #000000 0.1vmax;
-}
-/* Row */
-.table div {
-    display: table-row;
-}
-
-/* Estilo para la primera fila (encabezado) */
-.table > div:first-child div {
-    //font-weight: bold;
-}
-
-/* Cell */
-.table div div {
-    display: table-cell;
-    border: solid #000000 0.1vmax;
-    vertical-align: middle;
-    padding: 0.7%;
-}
-
-/* p0 */
-#p0 .table div div input, #p0 .table div div select[multiple], #p0 .table div div textarea {
-    width: 98%;
-}
-
-#p0 .table div div select[multiple], #p0 .table div div textarea {
-    height: 5.5vmax;
-    resize: none;
-}
-
 /* d_flatware */
 #d_flatware {
     margin-left: 22%;
@@ -95,7 +59,7 @@ select[multiple] {
 /* Estilos específicos para cada contenedor */
 .win {
     top: 0.1vh; /* Empieza un poco más abajo del borde superior */
-    
+
     position: fixed;
     width: 22%; /* Ajusta el ancho según sea necesario */
     left: 0.1%; /* Centrado horizontal usando porcentajes */
@@ -132,4 +96,15 @@ a {
 
 a:active {
     color: #ff0000;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    select[multiple] {
+        width: 90%;
+        font-family: monospace;
+        margin-bottom:0.5vmax;
+        height:1vmax;
+        padding: 0.5vmax;
+    }
 }
