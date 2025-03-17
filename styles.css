@@ -59,6 +59,10 @@ body {
     height:5vmax;
 }
 
+#d_flatware .material-symbols-outlined {
+    font-size: 1vmax !important;
+}
+
 /* menu */
 .material-symbols-outlined {
     font-size: 3vmax;
@@ -70,24 +74,62 @@ body {
     font-weight: bold;
 }
 
-.menu {
+select[multiple] {
+    width: 90%;
+    font-family: monospace;
+    margin-bottom:0.5vmax;
+    height:14.6vmax;
+    padding: 0.5vmax;
+}
+
+/* Estilos generales para que los elementos estén flotantes */
+.menu, .edit {
     background: #ffffff;
     padding: 1vmax;
     margin: 1vmax;
     padding-right: 3vmax;
     border-radius: 1vmax;
     box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.1);
-    width: auto;
-
-    position: fixed;
-    top: 10%; 
-    left: 10%;
-    transform: translateX(-50%);
-    z-index: 0;
 }
 
-.menu div {
+/* Estilos específicos para cada contenedor */
+.win {
+    top: 0.1vh; /* Empieza un poco más abajo del borde superior */
+    
+    position: fixed;
+    width: 22%; /* Ajusta el ancho según sea necesario */
+    left: 0.1%; /* Centrado horizontal usando porcentajes */
+    z-index: 0;
+}
+/*Tiene que estar siempre a un 1% del de arriba */
+.edit {
+    top: calc(34.5vh + 1vh); /* Empieza más abajo para no solaparse con el menu */
+}
+
+/* Para los elementos dentro de los div */
+.menu h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.menu div, .edit div {
     display: flex;
     align-items: center;
+    margin: 1vmax 0;
+}
+
+.menu div span:nth-child(2),
+.menu div span:nth-child(4) {
     cursor: pointer;
+}
+
+/* Enlaces */
+a {
+    cursor: pointer;
+    color: #6f1a8b;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #ff0000;
 }

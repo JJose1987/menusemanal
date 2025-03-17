@@ -9,6 +9,8 @@ var name_month = Array.from({length: 12}, (_, i) => (new Intl.DateTimeFormat(use
 // Nombre Día Semana
 var name_week  = Array.from({length:  7}, (_, i) => (new Intl.DateTimeFormat(userLanguage, {weekday: 'long' }).format((new Date()).addDays(0, i + 1))).capitalize());
 
+var k_id       = '';
+var ka         = {html: true, rand: true, k_flatware : {0: [], 1: [], 2: [], 3: [], 4: []}}
 var k_flatware = {0: [], 1: [], 2: [], 3: [], 4: []};
 /*
     Ingredientes
@@ -194,50 +196,75 @@ var ingredients = [
 // Funciones
 function main() {
     //
-    $('.menu div').on('click', function(e) {
+    $('.material-symbols-outlined').on('click', function(e) {
         var d_flatware =  '';
 
-        if (($(this).text()).indexOf('upload') != -1) {
-            return;
-        } else if (($(this).text()).indexOf('add') != -1) {
-            return;
-        } else if (($(this).text()).indexOf('save') != -1) {
-            return;
-        } else if (($(this).text()).indexOf('flatware') != -1) {
-            d_flatware = flatware();
-            $('#d_flatware').html((d_flatware.replaceAll(' ' , '&nbsp;')).replaceAll('\n' , '<br />'));
+        if (($(this).text()).indexOf('flatware') != -1) {
+            d_flatware = flatware(ka);
+            $('#d_flatware').html(d_flatware);
 
         } else if (($(this).text()).indexOf('send') != -1) {
-            if ($.trim($('#d_flatware').text()) == '') {
-                d_flatware = flatware();
-                $('#d_flatware').html((d_flatware.replaceAll(' ' , '&nbsp;')).replaceAll('\n' , '<br />'));
-            } else {
-                d_flatware = (($('#d_flatware').html()).replaceAll('&nbsp;', ' ')).replaceAll('<br>', '\n');
-            }
+            ka['html']       = false;
+            ka['k_flatware'] = k_flatware;
+            d_flatware = flatware(ka);
 
             // Crea un lugar temporal para guardar el valor a copiar
             var $temp = $('<textarea>').val(d_flatware).appendTo('body').select();
             // Ejecuta el evento copiar
             document.execCommand('copy');
-            //  Borra temporal
+            // Borra temporal
+            $temp.remove();
+
+            toast('Texto copiado', 3000);
+        } else if (($(this).text()).indexOf('close') != -1) {
+            $('.edit').hide();
+        }
+    });
+    // 
+    $('span').on('click', function(e) {
+        var d_flatware =  '';
+
+        if (($(this).text()).indexOf('Generar aleatorio') != -1) {
+            d_flatware = flatware(ka);
+            $('#d_flatware').html(d_flatware);
+
+        } else if (($(this).text()).indexOf('Enviar') != -1) {
+            ka['html']       = false;
+            ka['k_flatware'] = k_flatware;
+            d_flatware = flatware(ka);
+
+            // Crea un lugar temporal para guardar el valor a copiar
+            var $temp = $('<textarea>').val(d_flatware).appendTo('body').select();
+            // Ejecuta el evento copiar
+            document.execCommand('copy');
+            // Borra temporal
             $temp.remove();
 
             toast('Texto copiado', 3000);
         }
+        
     });
-
     //
     $('input[type=text], textarea')
         .attr('autocomplete', 'off');
 
-    $.each(time, function (i, item) {
-        $('[name=time]').append($('<option>', {
+    $('#d_flatware').html(flatware(ka));
+
+    // Lista de ingredientes
+    var taux0 = ingredients.map(ingredients => ingredients.name);
+
+    $.each(taux0, function (i, item) {
+        $('[name=ingredients]').append($('<option>', {
             value: i,
-            text : item
+            text : item.capitalize()
         }));
     });
 
-    $('#d_flatware').html((flatware().replaceAll(' ' , '&nbsp;')).replaceAll('\n' , '<br />'));
+    //
+    $('[name=ingredients]')
+        .change(function(e) {setPlat();});
+        
+    $('.edit').hide();
 
     update();
 }
@@ -251,31 +278,69 @@ function set(object) {
 
 // Actualizar valores de la clase
 function update() {
-
+    
 }
 
 // Generar menu semanal
-function flatware() {
-    // Resesera platos
-    k_flatware = {0: [], 1: [], 2: [], 3: [], 4: []};
-    // Inicalizar ingredientes
-    $.each(ingredients, function(index, item) {
-        item.uweek = 0;
-        item.buy = 0;
-    });
+function flatware(kwargs = {html: true, rand: true, k_flatware : {0: [], 1: [], 2: [], 3: [], 4: []}}) {
     // Variables
-    var fec  = new Date();
     var out  = 'Menu planificado para los siguientes días: \n';
+    // Inicalizar ingredientes
+    $.each(ingredients, function(index, item) {
+        item.uweek = 0;
+        item.buy = 0;
+    });
 
-    // Almuerzo y Cena
-    var eat       = [];
-    var dinner    = [];
+    if (typeof kwargs['rand'] == 'undefined') {
+        kwargs['rand'] = true;
+    }
+    
+    if (typeof kwargs['html'] == 'undefined') {
+        kwargs['html'] = true;
+    }
 
-    for (var i0 = 0; i0 < 4; i0++) {
-        eat   [i0] = plat(2);
-        setUweek(eat[i0]);
-        dinner[i0] = plat(4);
-        setUweek(dinner[i0]);
+    if (typeof kwargs['k_flatware'] == 'undefined') {
+        kwargs['rand'] = true;
+    }
+
+    // Resesera platos
+    if (kwargs['rand']) {
+        k_flatware = {0: [], 1: [], 2: [], 3: [], 4: []};
+
+        // Almuerzo y Cena
+        var eat       = [];
+        var dinner    = [];
+
+        for (var i0 = 0; i0 < 4; i0++) {
+            eat   [i0] = plat(2);
+            //setUweek(eat[i0]);
+            dinner[i0] = plat(4);
+            //setUweek(dinner[i0]);
+        }
+
+        for (var i0 = 0; i0 < 7; i0++) {
+            var t = 0;
+            var aux = '';
+
+            aux = plat(t);
+            k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
+
+            aux = plat(++t);
+            k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
+
+            ++t;
+            aux = eat[[0, 1, 0, 1, 2, 3, 2, 3][i0]];
+            k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
+
+            aux = plat(++t);
+            k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
+
+            ++t;
+            aux = dinner[[0, 1, 0, 1, 2, 3, 2, 3][i0]];
+            k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
+        }
+    } else {
+        k_flatware = kwargs['k_flatware'];
     }
 
     // Inicalizar ingredientes
@@ -284,81 +349,68 @@ function flatware() {
         item.buy = 0;
     });
 
-    //Generar semana
-    for (var i0 = 0; i0 <= 7; i0++) {
-        fec = fec.addDays(1);
-        var [y, M, d] = (fec.toISOString()).match(/\d+/g);
-        out += '\n' + (' ').repeat(4) + name_week [[5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())]] + ' ' + d + ' de ' + name_month[parseInt(M - 1)] + ' del ' + y + '.';
-        
-        var t = 0;
-        var aux = '';
+    //Escribir la semana
+    for (var i0 = 0; i0 < 7; i0++) {
+        var fec = (new Date()).addDays(i0);
+        var d   = ('0' + fec.getDate()).slice(-2);
 
-        aux = plat(t);
-        out += '\n' + (' ').repeat(8) + 'Para ' + (time[t] + (' ').repeat(10 - time[t].length)) + ': ' + aux;
-        setBuy(aux);
-        //setUweek(aux);
-        k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
+        var nw  = name_week[[5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())]];
+        var nm  = name_month[parseInt(fec.getMonth())];
+        out += `\n\n    ${nw.padEnd(10)}${d} de ${nm.padEnd(9)}de ${fec.getFullYear()}.`;
 
-        aux = plat(++t);
-        out += '\n' + (' ').repeat(8) + 'Para ' + (time[t] + (' ').repeat(10 - time[t].length)) + ': ' + aux;
-        setBuy(aux);
-        //setUweek(aux);
-        k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
+        for (var t = 0; t <= 4; t++) {
+            var iw  = [5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())];
+            var aux = '';
 
-        ++t;
-        aux = eat[[0, 1, 0, 1, 2, 3, 2, 3][i0]]
-        out += '\n' + (' ').repeat(8) + 'Para ' + (time[t] + (' ').repeat(10 - time[t].length)) + ': ' + aux;
-        setBuy(aux);
-        setUweek(aux);
-        k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
+            if (k_flatware[t].length == 0) {
+                aux = plat(t);
+                k_flatware[t][iw] = (aux.substring(0, aux.length - 1)).split(', ');
+            }
 
-        aux = plat(++t);
-        out += '\n' + (' ').repeat(8) + 'Para ' + (time[t] + (' ').repeat(10 - time[t].length)) + ': ' + aux;
-        setBuy(aux);
-        //setUweek(aux);
-        k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
+            aux = k_flatware[t][iw].join(', ') + '.';
+            out += `\n        {edit_${t},${iw}}Para ${time[t].padEnd(9)}: ${aux}{/a}`;
 
-        ++t;
-        aux = dinner[[0, 1, 0, 1, 2, 3, 2, 3][i0]]
-        out += '\n' + (' ').repeat(8) + 'Para ' + (time[t] + (' ').repeat(10 - time[t].length)) + ': ' + aux;
-        setBuy(aux);
-        //setUweek(aux);
-        k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
-    }
-
-    // Generar compra
-    out += setShoppingList();
-
-/*
-    // Generar balance semanal
-    out += '\n\n' + (' ').repeat(4) + 'Balance semanal:';
-
-    // Filtramos la hora en la que se come
-    taux0 = $.grep(taux0, function(table) {
-        return [2, 4].some(function(time) {
-            return table.times.includes(time);
-        });
-    });
-
-    // Filtramos por los tipos de ingredientes
-    taux0 = $.grep(taux0, function(table) {
-        return !['other', 'dried', 'dairy'].some(function(type) {
-            return table.type.includes(type);
-        });
-    });
-
-    var ant = '';
-    for (var i0 = 0; i0 < taux0.length; i0++) {
-        var percent = parseFloat((100 * parseInt(taux0[i0]['uweek'])) / parseInt(taux0[i0]['nweek'])).toFixed(2);
-        percent = (percent.split('.')[0].padStart(3, '0')) + '.' + percent.split('.')[1];
-
-        var aux = percent + '% ' + taux0[i0]['type'].capitalize() + '.';
-        if (ant != aux) {
-            ant = aux;
-            out += '\n' + (' ').repeat(8) + ant;
+            setBuy(aux);
         }
     }
-    */
+    
+    if (kwargs['html']) {
+        out = (out.replaceAll(' ' , '&nbsp;')).replaceAll('\n' , '<br />');
+        
+        for (var i0 = 0; i0 < 7; i0++) {
+            var fec = (new Date()).addDays(i0);
+            var d   = ('0' + fec.getDate()).slice(-2);
+
+            var nw  = name_week[[5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())]];
+            var nm  = name_month[parseInt(fec.getMonth() - 1)];
+
+            var aux = `${d} de ${nm.padEnd(9)}de ${fec.getFullYear()}`;
+            for (var t = 0; t <= 4; t++) {
+                var iw  = [5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())];
+                
+                out = out.replaceAll(`{edit_${t},${iw}}` , `<a onClick=\"showPlat(\'${t},${iw}\', \'${aux}\')\" >`);
+                out = out.replaceAll('{/a}', '</a>');
+            }
+        }
+    } else {
+        for (var i0 = 0; i0 < 7; i0++) {
+            var fec = (new Date()).addDays(i0);
+            var d   = ('0' + fec.getDate()).slice(-2);
+
+            var nw  = name_week[[5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())]];
+            var nm  = name_month[parseInt(fec.getMonth() - 1)];
+
+            for (var t = 0; t <= 4; t++) {
+                var iw  = [5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())];
+
+                out = out.replaceAll(`{edit_${t},${iw}}` , '');
+                out = out.replaceAll('{/a}', '');
+            }
+        }
+        
+        // Generar compra
+        out += setShoppingList();
+    }
 
     return out;
 }
@@ -455,7 +507,7 @@ function plat(i_time = 0) {
         } else if (getType(out[out.length - 1]) == 'legume') {
             if (out[out.length - 1] == 'lentejas') {
                 kwargs['types'] = ['vegetable', 'other'];
-                kwargs['names'] = ['tomate', 'cebolla', 'pimiento', 'zanahoria', 'calabaza'];
+                kwargs['names'] = ['tomate', 'cebolla', 'pimiento', 'zanahoria'];
                 kwargs['nValues'] = 5;
                 out = out.concat(getIngredients(kwargs));
 
@@ -528,8 +580,8 @@ function setShoppingList() {
     });
 
     // Informar elementos comprados
-    for (var i0 = 0; i0 <= 7; i0++) {
-        for (var i1 = 0; i1 <= 4; i1++) { 
+    for (var i0 = 0; i0 < 7; i0++) {
+        for (var i1 = 0; i1 <= 4; i1++) {
             setBuy(k_flatware[i1][i0].join(', ') + '.');
         }
     }
@@ -542,7 +594,7 @@ function setShoppingList() {
     for (var i0 = 0; i0 < taux0.length; i0++) {
         out += '\n' + (' ').repeat(8) + ((taux0[i0]['buy'] > 9?'':'0') + taux0[i0]['buy']) + ' ' + taux0[i0]['name'].capitalize() + '.';
     }
-    
+
     return out;
 }
 
@@ -594,7 +646,6 @@ function getIngredients(kwargs = {types: [], names: [], time: 0, nValues: 1}) {
         if (kwargs['nValues'] <= 0) {
             kwargs['nValues'] = 1;
         }
-
     }
 
     // Generar la tabla de retorno
@@ -667,4 +718,41 @@ function getType(name = '') {
     }
 
     return null;
+}
+
+// Actualizar ese dia con los ingredientes marcados
+function setPlat() {
+    // Generar un array con lo selecionado
+    var taux = [];
+    $.each($('[name=ingredients]').val(), function(i, item) {
+        taux = taux.concat(ingredients[parseInt(item)].name);
+    });
+    
+    var t  = k_id.split(',')[0];
+    var iw = k_id.split(',')[1];
+
+    // Se actualiza el parrafo d_flatware
+    k_flatware[t][iw] = taux;
+    ka['rand'] = false;
+    ka['html'] = true;
+    ka['k_flatware'] = k_flatware;
+
+    $('#d_flatware').html(flatware(ka));
+}
+
+// Mostrar los ingredientes de un plato id = ${t},${iw}
+function showPlat(id = '', fec = '') {
+    $('.edit').show();
+    k_id = id;
+    
+    var t  = id.split(',')[0];
+    var iw = id.split(',')[1];
+    
+    $('#ediv').html('Editar el ' + fec + '.<br />Para ' + time[t] + '.');
+    
+    // Seleccionamos aquello que corresponda a ese dia
+    $.each(k_flatware[t][iw], function(i, item) {
+        var i_value = ingredients.findIndex(ingredients => ingredients.name.capitalize() === item.capitalize());
+        $('[name=ingredients] option').eq(i_value + 1).prop('selected', true);
+    });
 }

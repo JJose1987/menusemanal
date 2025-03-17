@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="es">
     <head>
-        <title>Titulo</title>
+        <title>Menu semanal</title>
         <meta charset="UTF-8">
         <meta name="author" content="Juan Jose">
         <meta name="description" content="">
@@ -35,36 +35,26 @@
         <script src="functions.js"></script>
 
     </head>
-    <body>
-        <div class="menu">
-            <!--
-            <div>
-                <span class="material-symbols-outlined">upload</span>
-                <span>Subir xls de recetas</span>
-            </div>
-            <div>
-                <span class="material-symbols-outlined">add</span>
-                <span>Nueva fila</span>
-            </div>
-            <div>
-                <span class="material-symbols-outlined">save</span>
-                <span>Guardar como...</span>
+    <body>    
+        <div class="win">
+            <div class="menu">
+                <h1>Menu semanal</h1>
+                <div>
+                    <span class="material-symbols-outlined">flatware</span>
+                    <span>Generar aleatorio</span>
+                </div>
+                <div>
+                    <span class="material-symbols-outlined">send</span>
+                    <span>Enviar</span>
+                </div>
             </div>
 
-            <hr />
-            -->
-            <h1>Menu semanal</h1>
-            <div>
-                <span class="material-symbols-outlined">flatware</span>
-                <span>Generar aleatorio</span>
-            </div>
-            <div>
-                <span class="material-symbols-outlined">edit</span>
-                <span>Editar</span>
-            </div>
-            <div>
-                <span class="material-symbols-outlined">send</span>
-                <span>Enviar</span>
+            <div class="edit">
+                <div>
+                    <span class="material-symbols-outlined">close</span>
+                    <span id="ediv">Editar el </span><br />
+                </div>
+                <select name="ingredients" multiple></select>
             </div>
         </div>
 
