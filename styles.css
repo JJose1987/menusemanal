@@ -5,58 +5,49 @@ body {
    line-height: 1.5vmax;
    margin: 0.1%;
    text-align: left;
-   vertical-align: top;
+   vertical-align: middle;
    background-color: #f8f9fa;
    color: #333;
 }
 
-.material-symbols-outlined {
-    cursor: pointer;
+/* Table */
+.table {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
 }
-
-/* d_flatware */
-#d_flatware {
-    margin-left: 22%;
-    margin-top: 2%;
-    resize: none;
-    width: 75%;
-    height:5vmax;
+/* Row */
+.table div {
+    display: table-row;
 }
-
-#d_flatware .material-symbols-outlined {
-    font-size: 1vmax !important;
-}
-
-/* menu */
-.material-symbols-outlined {
-    font-size: 3vmax;
-    color: #555;
-    margin-right: 0.5vmax;
-}
-
-.material-symbols-outlined:hover{
-    font-weight: bold;
-}
-
-select[multiple] {
-    width: 90%;
-    font-family: monospace;
-    margin-bottom:0.5vmax;
-    height:14.6vmax;
+/* Cell */
+.table div div {
+    display: table-cell;
+    barder:solid #000000 0.1vmax;
+    text-align: left;
+    vertical-align: top;
+    
     padding: 0.5vmax;
 }
 
-/* Estilos generales para que los elementos estén flotantes */
-.menu, .edit {
-    background: #ffffff;
-    padding: 1vmax;
-    margin: 1vmax;
-    padding-right: 3vmax;
-    border-radius: 1vmax;
-    box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.1);
+.table div:nth-child(1) {
+    width: 20%;
 }
 
-/* Estilos específicos para cada contenedor */
+/* */
+.material-symbols-outlined {
+    cursor: pointer;
+    font-size: 3vmax;
+    color: #555;
+    margin-right: 0.5vmax;
+    vertical-align: middle;
+}
+.material-symbols-outlined:hover {
+    font-weight: bold;
+}
+
+/* */
+/* Estilos generales para el menu derecho*/
 .win {
     top: 0.1vh; /* Empieza un poco más abajo del borde superior */
 
@@ -65,26 +56,41 @@ select[multiple] {
     left: 0.1%; /* Centrado horizontal usando porcentajes */
     z-index: 0;
 }
-/*Tiene que estar siempre a un 1% del de arriba */
-.edit {
-    top: calc(34.5vh + 1vh); /* Empieza más abajo para no solaparse con el menu */
-}
 
-/* Para los elementos dentro de los div */
+.menu, .edit {
+    background: #ffffff;
+    padding-right: 3vmax;
+    border-radius: 1vmax;
+    box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.1);
+}
+/* Para los elementos dentro del menu derecho*/
 .menu h1 {
     margin: 0;
     font-size: 1.5em;
+    text-align: center !important;
 }
 
 .menu div, .edit div {
     display: flex;
-    align-items: center;
-    margin: 1vmax 0;
+    align-items: center; /* Alinea verticalmente los elementos dentro del span */
+    padding: 0vmax !important;
 }
 
-.menu div span:nth-child(2),
-.menu div span:nth-child(4) {
+.menu div span {
     cursor: pointer;
+}
+
+.menu div span:hover {
+    font-weight: bold;
+}
+
+/* Si el ancho de la ventana es un movil reducir el height*/
+select[multiple] {
+    width: 90%;
+    font-family: monospace;
+    margin-bottom:0.5vmax;
+    height:20vmax;
+    padding: 0.5vmax;
 }
 
 /* Enlaces */
@@ -98,22 +104,8 @@ a:active {
     color: #ff0000;
 }
 
-/* Ajustes para móviles */
-@media (max-width: 768px) {
-    select[multiple] {
-        width: 90%;
-        font-family: monospace;
-        margin-bottom: 0.5vmax;
-        height: 1vmax;
-        padding: 0.5vmax;
-    }
-    
-    .win {
-        top: 0.1vh; /* Empieza un poco más abajo del borde superior */
-
-        position: fixed;
-        width: 10%; /* Ajusta el ancho según sea necesario */
-        left: 0.1%; /* Centrado horizontal usando porcentajes */
-        z-index: 0;
-    }
+/* d_flatware */
+#d_flatware {
+    padding-left: 1%;
+    padding-top: 1%;
 }

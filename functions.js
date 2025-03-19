@@ -218,16 +218,19 @@ function main() {
             toast('Texto copiado', 3000);
         } else if (($(this).text()).indexOf('close') != -1) {
             $('.edit').hide();
+            
+            k_id = '';
         }
     });
     
     // Generar aleatorio
-    $('.menu div span:nth-child(2)').on('click', function(e) {
+    $('.menu div:nth-of-type(1) span:nth-child(2)').on('click', function(e) {
+        ka['html']       = true;
         $('#d_flatware').html(flatware(ka));
     });
     
     // Enviar
-    $('.menu div span:nth-child(4)').on('click', function(e) {
+    $('.menu div:nth-of-type(2) span:nth-child(2)').on('click', function(e) {
         ka['html']       = false;
         ka['k_flatware'] = k_flatware;
 
@@ -369,6 +372,9 @@ function flatware(kwargs = {html: true, rand: true, k_flatware : {0: [], 1: [], 
     
     if (kwargs['html']) {
         out = (out.replaceAll(' ' , '&nbsp;')).replaceAll('\n' , '<br />');
+
+        var s_t  = k_id.split(',')[0];
+        var s_iw = k_id.split(',')[1];
         
         for (var i0 = 0; i0 < 7; i0++) {
             var fec = (new Date()).addDays(i0);
@@ -381,7 +387,12 @@ function flatware(kwargs = {html: true, rand: true, k_flatware : {0: [], 1: [], 
             for (var t = 0; t <= 4; t++) {
                 var iw  = [5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())];
                 
-                out = out.replaceAll(`{edit_${t},${iw}}` , `<a onClick=\"showPlat(\'${t},${iw}\', \'${aux}\')\" >`);
+                if ((s_t == t) && (s_iw == iw)) {
+                    out = out.replaceAll(`{edit_${t},${iw}}` , `<a style=\'color: #ff0000\' onClick=\"showPlat(\'${t},${iw}\', \'${aux}\')\" >`);
+                } else {
+                    out = out.replaceAll(`{edit_${t},${iw}}` , `<a onClick=\"showPlat(\'${t},${iw}\', \'${aux}\')\" >`);
+                }
+
                 out = out.replaceAll('{/a}', '</a>');
             }
         }
@@ -741,12 +752,17 @@ function showPlat(id = '', fec = '') {
     
     var t  = id.split(',')[0];
     var iw = id.split(',')[1];
-    
+
+    ka['rand'] = false;
+    ka['html'] = true;
+    ka['k_flatware'] = k_flatware;
+    $('#d_flatware').html(flatware(ka));
+
     $('#ediv').html('Editar el ' + fec + '.<br />Para ' + time[t] + '.');
     
     // Borrar los selecionados previamente
-    $('[name=ingredients]:selected').remove();
-    
+    $('select[multiple]').val([]); 
+
     // Seleccionamos aquello que corresponda a ese dia
     $.each(k_flatware[t][iw], function(i, item) {
         var i_value = ingredients.findIndex(ingredients => ingredients.name.capitalize() === item.capitalize());

@@ -35,30 +35,37 @@
         <script src="functions.js"></script>
 
     </head>
-    <body>    
-        <div class="win">
-            <div class="menu">
-                <h1>Menu semanal</h1>
+    <body>
+        <div class="table">
+            <div>
                 <div>
-                    <span class="material-symbols-outlined">flatware</span>
-                    <span>Generar aleatorio</span>
+                    <div class="win">
+                        <div class="menu">
+                            <h1>Menu semanal</h1>
+                            <div>
+                                <span class="material-symbols-outlined">flatware</span>
+                                <span>Generar aleatorio</span>
+                            </div>
+                            <br />
+                            <div>
+                                <span class="material-symbols-outlined">send</span>
+                                <span>Enviar</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="edit">
+                            <div>
+                                <span class="material-symbols-outlined">close</span>
+                                <span id="ediv">Editar el </span><br />
+                            </div>
+                            <select name="ingredients" multiple></select>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <span class="material-symbols-outlined">send</span>
-                    <span>Enviar</span>
+                    <div id="d_flatware"></div>
                 </div>
-            </div>
-
-            <div class="edit">
-                <div>
-                    <span class="material-symbols-outlined">close</span>
-                    <span id="ediv">Editar el </span><br />
-                </div>
-                <select name="ingredients" multiple></select>
             </div>
         </div>
-
-        <div id="d_flatware"></div>
-
     </body>
 </html>
