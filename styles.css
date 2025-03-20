@@ -49,10 +49,9 @@ body {
 /* */
 /* Estilos generales para el menu derecho*/
 .win {
-    top: 0.1vh; /* Empieza un poco más abajo del borde superior */
-
     position: fixed;
     width: 22%; /* Ajusta el ancho según sea necesario */
+    top: 0.1vh; /* Empieza un poco más abajo del borde superior */
     left: 0.1%; /* Centrado horizontal usando porcentajes */
     z-index: 0;
 }
@@ -113,6 +112,11 @@ a:active {
 /* Estilos para la version en smartphone */
 @media only screen and (max-width: 600px) {
     select[multiple] {
-        height:2vmax;
+        height:1.5vmax;
     }
+    
+    .win {
+        width: 30%;
+    }
+    
 }
