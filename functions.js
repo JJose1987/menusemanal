@@ -213,7 +213,7 @@ function main() {
                     ,'background-color': '#f8f9c0'
                 });
                 
-                $('win').css({'width': '30%';
+                $('win').css({'width': '30%'
                 });
             }
         }
