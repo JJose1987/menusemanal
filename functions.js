@@ -196,6 +196,27 @@ var ingredients = [
 // Funciones
 function main() {
     //
+    if (isPhone) {
+        var msg = '';
+
+        if (screen.orientation && screen.orientation.type) {
+            // Obtener el tipo de orientación actual
+            var orientacionActual = screen.orientation.type;
+            msg += '\nOrientación actual:' + orientacionActual;
+
+            // Intentar bloquear la orientación en modo horizontal
+            screen.orientation.lock('landscape').then(function() {
+                msg += '\nOrientación bloqueada en modo horizontal';
+            }).catch(function(error) {
+                msg += '\nError al bloquear la orientación:' + error;
+            });
+        } else {
+            msg += '\nLa API de orientación de pantalla no es compatible en este navegador.';
+        }
+
+        toast(msg, 10000);
+    }
+    //
     $('.material-symbols-outlined').on('click', function(e) {
         var d_flatware =  '';
 
@@ -218,17 +239,19 @@ function main() {
             toast('Texto copiado', 3000);
         } else if (($(this).text()).indexOf('close') != -1) {
             $('.edit').hide();
-            
             k_id = '';
+
+            ka['html']       = true;
+            $('#d_flatware').html(flatware(ka));
         }
     });
-    
+
     // Generar aleatorio
     $('.menu div:nth-of-type(1) span:nth-child(2)').on('click', function(e) {
         ka['html']       = true;
         $('#d_flatware').html(flatware(ka));
     });
-    
+
     // Enviar
     $('.menu div:nth-of-type(2) span:nth-child(2)').on('click', function(e) {
         ka['html']       = false;
@@ -259,7 +282,7 @@ function main() {
     //
     $('[name=ingredients]')
         .change(function(e) {setPlat();});
-        
+
     $('.edit').hide();
 
     update();
@@ -274,7 +297,7 @@ function set(object) {
 
 // Actualizar valores de la clase
 function update() {
-    
+
 }
 
 // Generar menu semanal
@@ -290,7 +313,7 @@ function flatware(kwargs = {html: true, rand: true, k_flatware : {0: [], 1: [], 
     if (typeof kwargs['rand'] == 'undefined') {
         kwargs['rand'] = true;
     }
-    
+
     if (typeof kwargs['html'] == 'undefined') {
         kwargs['html'] = true;
     }
@@ -369,13 +392,13 @@ function flatware(kwargs = {html: true, rand: true, k_flatware : {0: [], 1: [], 
             setBuy(aux);
         }
     }
-    
+
     if (kwargs['html']) {
         out = (out.replaceAll(' ' , '&nbsp;')).replaceAll('\n' , '<br />');
 
         var s_t  = k_id.split(',')[0];
         var s_iw = k_id.split(',')[1];
-        
+
         for (var i0 = 0; i0 < 7; i0++) {
             var fec = (new Date()).addDays(i0);
             var d   = ('0' + fec.getDate()).slice(-2);
@@ -386,7 +409,7 @@ function flatware(kwargs = {html: true, rand: true, k_flatware : {0: [], 1: [], 
             var aux = `${d} de ${nm.padEnd(9)}de ${fec.getFullYear()}`;
             for (var t = 0; t <= 4; t++) {
                 var iw  = [5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())];
-                
+
                 if ((s_t == t) && (s_iw == iw)) {
                     out = out.replaceAll(`{edit_${t},${iw}}` , `<a style=\'color: #ff0000\' onClick=\"showPlat(\'${t},${iw}\', \'${aux}\')\" >`);
                 } else {
@@ -411,7 +434,7 @@ function flatware(kwargs = {html: true, rand: true, k_flatware : {0: [], 1: [], 
                 out = out.replaceAll('{/a}', '');
             }
         }
-        
+
         // Generar compra
         out += setShoppingList();
     }
@@ -732,7 +755,7 @@ function setPlat() {
     $.each($('[name=ingredients]').val(), function(i, item) {
         taux = taux.concat(ingredients[parseInt(item)].name);
     });
-    
+
     var t  = k_id.split(',')[0];
     var iw = k_id.split(',')[1];
 
@@ -749,7 +772,7 @@ function setPlat() {
 function showPlat(id = '', fec = '') {
     $('.edit').show();
     k_id = id;
-    
+
     var t  = id.split(',')[0];
     var iw = id.split(',')[1];
 
@@ -759,9 +782,9 @@ function showPlat(id = '', fec = '') {
     $('#d_flatware').html(flatware(ka));
 
     $('#ediv').html('Editar el ' + fec + '.<br />Para ' + time[t] + '.');
-    
+
     // Borrar los selecionados previamente
-    $('select[multiple]').val([]); 
+    $('select[multiple]').val([]);
 
     // Seleccionamos aquello que corresponda a ese dia
     $.each(k_flatware[t][iw], function(i, item) {

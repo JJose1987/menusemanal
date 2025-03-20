@@ -109,3 +109,10 @@ a:active {
     padding-left: 1%;
     padding-top: 1%;
 }
+
+/* Estilos para la version en smartphone */
+@media only screen and (max-width: 600px) {
+    select[multiple] {
+        height:1vmax;
+    }
+}
