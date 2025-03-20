@@ -197,26 +197,7 @@ var ingredients = [
 function main() {
     // Validar orientación de la pantalla
     if (isPhone) {
-        if (screen.orientation && screen.orientation.type) {
-            // Obtener el tipo de orientación actual
-            var orientacionActual = screen.orientation.type;
 
-            // Validar que esta en sentido Vertical
-            if (orientacionActual.indexOf('portrait') != -1) {
-                
-                $('body').css({'transform': 'rotate(90deg)'
-                    ,'-webkit-transform': 'rotate(90deg)'  /* Safari */
-                    ,'-moz-transform': 'rotate(90deg)'     /* Firefox */
-                    ,'-ms-transform': 'rotate(90deg)'      /* IE */
-                    ,'-o-transform': 'rotate(90deg)'       /* Opera */
-
-                    ,'background-color': '#f8f9c0'
-                });
-                
-                $('win').css({'width': '30%'
-                });
-            }
-        }
     }
     //
     $('.material-symbols-outlined').on('click', function(e) {
