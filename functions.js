@@ -195,26 +195,22 @@ var ingredients = [
 ];
 // Funciones
 function main() {
-    //
+    // Validar orientación de la pantalla
     if (isPhone) {
-        var msg = '';
-
         if (screen.orientation && screen.orientation.type) {
             // Obtener el tipo de orientación actual
             var orientacionActual = screen.orientation.type;
-            msg += '\nOrientación actual:' + orientacionActual;
 
-            // Intentar bloquear la orientación en modo horizontal
-            screen.orientation.lock('landscape').then(function() {
-                msg += '\nOrientación bloqueada en modo horizontal';
-            }).catch(function(error) {
-                msg += '\nError al bloquear la orientación:' + error;
-            });
-        } else {
-            msg += '\nLa API de orientación de pantalla no es compatible en este navegador.';
+            if (orientacionActual.indexOf('portrait') != -1) {
+                $('body').css({
+                    'transform': 'rotate(90deg)',
+                    '-webkit-transform': 'rotate(90deg)', /* Safari */
+                    '-moz-transform': 'rotate(90deg)',    /* Firefox */
+                    '-ms-transform': 'rotate(90deg)',     /* IE */
+                    '-o-transform': 'rotate(90deg)'       /* Opera */
+                });
+            }
         }
-
-        toast(msg, 10000);
     }
     //
     $('.material-symbols-outlined').on('click', function(e) {
