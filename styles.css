@@ -116,7 +116,10 @@ a:active {
     }
     
     .win {
-        width: 30%;
+        width: 100%;
     }
     
+    body {
+       background-color: #f8f9c0;
+    }
 }
