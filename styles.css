@@ -113,6 +113,6 @@ a:active {
 /* Estilos para la version en smartphone */
 @media only screen and (max-width: 600px) {
     select[multiple] {
-        height:1vmax;
+        height:2vmax;
     }
 }
