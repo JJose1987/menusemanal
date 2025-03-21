@@ -196,14 +196,19 @@ var ingredients = [
 // Funciones
 function main() {
     // Generar aleatorio
-    $('.material-symbols-outlined:contains("flatware")').on('click', function(e) {
-        ka['html']       = true;
+    $('.material-symbols-outlined:contains("flatware")').on('click', function(e) {        
+        $('.edit').hide();
+        k_id = '';
+
+        ka['html'] = true;
+        ka['rand'] = true;
         $('#d_flatware').html(flatware(ka));
     });
 
     // Copiar
     $('.material-symbols-outlined:contains("content_copy")').on('click', function(e) {
         ka['html']       = false;
+        ka['rand']       = false;
         ka['k_flatware'] = k_flatware;
 
         // Crea un lugar temporal para guardar el valor a copiar
@@ -221,7 +226,8 @@ function main() {
         $('.edit').hide();
         k_id = '';
         
-        ka['html']       = true;
+        ka['html'] = true;
+        ka['rand'] = false;
         $('#d_flatware').html(flatware(ka));
     });
 
