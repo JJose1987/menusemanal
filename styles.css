@@ -9,111 +9,19 @@ body {
     color: #333;
 }
 
-/* Tabla */
-.table {
-    display: table;
-    border-collapse: collapse;
-    width: 100%;
-}
-.table div {
-    display: table-row;
-}
-.table div div {
-    display: table-cell;
-    text-align: left;
-    vertical-align: top;
-    padding: 1vmax;
-}
-.table div:nth-child(1) {
-    width: 20%;
-}
-
-/* Iconos Material */
-.material-symbols-outlined {
-    cursor: pointer;
-    font-size: 3vmax;
-    color: #555;
-    margin-right: 1vmax;
-    vertical-align: middle;
-}
-.material-symbols-outlined:hover {
-    font-weight: bold;
-}
-
-/* Menú derecho */
-.win {
-    position: fixed;
-    width: 25%;
-    top: 1%;
-    left: 1%;
-    z-index: 10;
-}
-.menu, .edit {
-    background: #ffffff;
-    padding: 2vmax;
-    border-radius: 2vmax;
-    box-shadow: 0 0 2vmax rgba(0, 0, 0, 0.1);
-}
-.menu h1 {
-    margin: 0;
-    font-size: 2vmax;
-    text-align: center;
-}
-.menu div, .edit div {
-    display: flex;
-    align-items: center;
-    padding: 1vmax 0;
-}
-.menu div span {
-    cursor: pointer;
-}
-.menu div span:hover {
-    font-weight: bold;
-}
-
-/* Select múltiple */
-select[multiple] {
-    width: 95%;
-    font-family: monospace;
-    margin-bottom: 1vmax;
-    height: 20vmax;
-    padding: 1vmax;
-}
-
-/* Enlaces */
-a {
-    cursor: pointer;
-    color: #6f1a8b;
-    text-decoration: underline;
-}
-a:active {
-    color: #ff0000;
-}
-
 /* Contenedor principal */
 #d_flatware {
     padding-left: 2%;
     padding-top: 2%;
+    width: 90%;
 }
 
-/* Adaptaciones móviles */
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 3vmax;
-        line-height: 3.5vmax;
-    }
-    .win {
-        width: 90%;
-        left: 5%;
-        top: 2%;
-    }
-    .menu, .edit {
-        padding: 3vmax;
-    }
-    select[multiple] {
-        height: 10vmax;
-    }
-    .material-symbols-outlined {
-        font-size: 4vmax;
-    }
+/* Enlaces */
+#d_flatware a {
+    cursor: pointer;
+    color: #6f1a8b;
+    text-decoration: underline;
+}
+#d_flatware a:active {
+    color: #ff0000;
 }

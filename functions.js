@@ -195,11 +195,7 @@ var ingredients = [
 ];
 // Funciones
 function main() {
-    // Validar orientación de la pantalla
-    if (isPhone) {
-
-    }
-    //
+    /*
     $('.material-symbols-outlined').on('click', function(e) {
         var d_flatware =  '';
 
@@ -207,19 +203,6 @@ function main() {
             d_flatware = flatware(ka);
             $('#d_flatware').html(d_flatware);
 
-        } else if (($(this).text()).indexOf('send') != -1) {
-            ka['html']       = false;
-            ka['k_flatware'] = k_flatware;
-            d_flatware = flatware(ka);
-
-            // Crea un lugar temporal para guardar el valor a copiar
-            var $temp = $('<textarea>').val(d_flatware).appendTo('body').select();
-            // Ejecuta el evento copiar
-            document.execCommand('copy');
-            // Borra temporal
-            $temp.remove();
-
-            toast('Texto copiado', 3000);
         } else if (($(this).text()).indexOf('close') != -1) {
             $('.edit').hide();
             k_id = '';
@@ -228,6 +211,8 @@ function main() {
             $('#d_flatware').html(flatware(ka));
         }
     });
+    */
+
 
     // Generar aleatorio
     $('.menu div:nth-of-type(1) span:nth-child(2)').on('click', function(e) {
@@ -235,8 +220,8 @@ function main() {
         $('#d_flatware').html(flatware(ka));
     });
 
-    // Enviar
-    $('.menu div:nth-of-type(2) span:nth-child(2)').on('click', function(e) {
+    // Copiar
+    $('.menu div:nth-of-type(2) span:nth-child(2), .menu div:nth-of-type(2) span:nth-child(1)').on('click', function(e) {
         ka['html']       = false;
         ka['k_flatware'] = k_flatware;
 
