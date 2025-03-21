@@ -1,95 +1,83 @@
-/* Styles */
+/* Estilos Generales */
 body {
-   font-family: monospace;
-   font-size: 1vmax;
-   line-height: 1.5vmax;
-   margin: 0.1%;
-   text-align: left;
-   vertical-align: middle;
-   background-color: #f8f9fa;
-   color: #333;
+    font-family: monospace;
+    font-size: 1vmax;
+    line-height: 1vmax;
+    margin: 1%;
+    text-align: left;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-/* Table */
+/* Tabla */
 .table {
     display: table;
     border-collapse: collapse;
     width: 100%;
 }
-/* Row */
 .table div {
     display: table-row;
 }
-/* Cell */
 .table div div {
     display: table-cell;
-    barder:solid #000000 0.1vmax;
     text-align: left;
     vertical-align: top;
-    
-    padding: 0.5vmax;
+    padding: 1vmax;
 }
-
 .table div:nth-child(1) {
     width: 20%;
 }
 
-/* */
+/* Iconos Material */
 .material-symbols-outlined {
     cursor: pointer;
     font-size: 3vmax;
     color: #555;
-    margin-right: 0.5vmax;
+    margin-right: 1vmax;
     vertical-align: middle;
 }
 .material-symbols-outlined:hover {
     font-weight: bold;
 }
 
-/* */
-/* Estilos generales para el menu derecho*/
+/* Menú derecho */
 .win {
     position: fixed;
-    width: 22%; /* Ajusta el ancho según sea necesario */
-    top: 0.1vh; /* Empieza un poco más abajo del borde superior */
-    left: 0.1%; /* Centrado horizontal usando porcentajes */
-    z-index: 0;
+    width: 25%;
+    top: 1%;
+    left: 1%;
+    z-index: 10;
 }
-
 .menu, .edit {
     background: #ffffff;
-    padding-right: 3vmax;
-    border-radius: 1vmax;
-    box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.1);
+    padding: 2vmax;
+    border-radius: 2vmax;
+    box-shadow: 0 0 2vmax rgba(0, 0, 0, 0.1);
 }
-/* Para los elementos dentro del menu derecho*/
 .menu h1 {
     margin: 0;
-    font-size: 1.5em;
-    text-align: center !important;
+    font-size: 2vmax;
+    text-align: center;
 }
-
 .menu div, .edit div {
     display: flex;
-    align-items: center; /* Alinea verticalmente los elementos dentro del span */
-    padding: 0vmax !important;
+    align-items: center;
+    padding: 1vmax 0;
 }
-
 .menu div span {
     cursor: pointer;
 }
-
 .menu div span:hover {
     font-weight: bold;
 }
 
-/* Si el ancho de la ventana es un movil reducir el height*/
+/* Select múltiple */
 select[multiple] {
-    width: 90%;
+    width: 95%;
     font-family: monospace;
-    margin-bottom:0.5vmax;
-    height:20vmax;
-    padding: 0.5vmax;
+    margin-bottom: 1vmax;
+    height: 20vmax;
+    padding: 1vmax;
 }
 
 /* Enlaces */
@@ -98,20 +86,34 @@ a {
     color: #6f1a8b;
     text-decoration: underline;
 }
-
 a:active {
     color: #ff0000;
 }
 
-/* d_flatware */
+/* Contenedor principal */
 #d_flatware {
-    padding-left: 1%;
-    padding-top: 1%;
+    padding-left: 2%;
+    padding-top: 2%;
 }
 
-/* Estilos para la version en smartphone */
+/* Adaptaciones móviles */
 @media only screen and (max-width: 600px) {
+    body {
+        font-size: 3vmax;
+        line-height: 3.5vmax;
+    }
+    .win {
+        width: 90%;
+        left: 5%;
+        top: 2%;
+    }
+    .menu, .edit {
+        padding: 3vmax;
+    }
     select[multiple] {
-        height:3vmax;
+        height: 10vmax;
+    }
+    .material-symbols-outlined {
+        font-size: 4vmax;
     }
 }
