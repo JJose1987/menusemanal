@@ -221,7 +221,7 @@ function main() {
     });
 
     // Copiar
-    $('.menu div:nth-of-type(2) span:nth-child(2), .menu div:nth-of-type(2) span:nth-child(1)').on('click', function(e) {
+    $('.material-symbols-outlined:contains("content_copy")').on('click', function(e) {
         ka['html']       = false;
         ka['k_flatware'] = k_flatware;
 

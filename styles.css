@@ -25,3 +25,20 @@ body {
 #d_flatware a:active {
     color: #ff0000;
 }
+
+/* Iconos */
+.material-symbols-outlined {
+    cursor: pointer;
+    font-size: 3vmax;
+    color: #555;
+    margin-right: 0.5vmax;
+    vertical-align: middle;
+    
+    position: fixed;
+    top: 2vh; /* Empieza un poco más abajo del borde superior */
+    left: 95%; /* Centrado horizontal usando porcentajes */
+    z-index: 0;
+}
+.material-symbols-outlined:hover {
+    font-weight: bold;
+}
