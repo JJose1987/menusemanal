@@ -1,8 +1,8 @@
 /* JavaScript */
 /* https://www.degraeve.com/reference/urlencoding.php */
 // Variables
-var time = ['desayunar', 'tentempié', 'almorzar', 'merendar', 'cenar'];
-var ways = ['cocer'    , 'freír'    , 'hornear' , 'asar'    , 'guisar', 'sofreír', 'vaporizar', 'grillar', 'saltear', 'estofar'];
+var time = ['desayuno', 'tentempié', 'almuerzo', 'merienda', 'cena'];
+var ways = ['cocer'   , 'freír'    , 'hornear' , 'asar'    , 'guisar', 'sofreír', 'vaporizar', 'grillar', 'saltear', 'estofar'];
 
 // Nombre Mes
 var name_month = Array.from({length: 12}, (_, i) => (new Intl.DateTimeFormat(userLanguage, {month: 'long' }).format(new Date(0, i))).capitalize());
@@ -195,27 +195,8 @@ var ingredients = [
 ];
 // Funciones
 function main() {
-    /*
-    $('.material-symbols-outlined').on('click', function(e) {
-        var d_flatware =  '';
-
-        if (($(this).text()).indexOf('flatware') != -1) {
-            d_flatware = flatware(ka);
-            $('#d_flatware').html(d_flatware);
-
-        } else if (($(this).text()).indexOf('close') != -1) {
-            $('.edit').hide();
-            k_id = '';
-
-            ka['html']       = true;
-            $('#d_flatware').html(flatware(ka));
-        }
-    });
-    */
-
-
     // Generar aleatorio
-    $('.menu div:nth-of-type(1) span:nth-child(2)').on('click', function(e) {
+    $('.material-symbols-outlined:contains("flatware")').on('click', function(e) {
         ka['html']       = true;
         $('#d_flatware').html(flatware(ka));
     });
@@ -233,6 +214,15 @@ function main() {
         $temp.remove();
 
         toast('Texto copiado', 3000);
+    });
+
+    // Cerrar editar
+    $('.material-symbols-outlined:contains("close")').on('click', function(e) {
+        $('.edit').hide();
+        k_id = '';
+        
+        ka['html']       = true;
+        $('#d_flatware').html(flatware(ka));
     });
 
     $('#d_flatware').html(flatware(ka));
@@ -355,7 +345,7 @@ function flatware(kwargs = {html: true, rand: true, k_flatware : {0: [], 1: [], 
             }
 
             aux = k_flatware[t][iw].join(', ') + '.';
-            out += `\n        {edit_${t},${iw}}Para ${time[t].padEnd(9)}: ${aux}{/a}`;
+            out += `\n        {edit_${t},${iw}}${(time[t].capitalize()).padEnd(9)}: ${aux}{/a}`;
 
             setBuy(aux);
         }
@@ -372,7 +362,7 @@ function flatware(kwargs = {html: true, rand: true, k_flatware : {0: [], 1: [], 
             var d   = ('0' + fec.getDate()).slice(-2);
 
             var nw  = name_week[[5, 6, 0, 1, 2, 3, 4][parseInt(fec.getDay())]];
-            var nm  = name_month[parseInt(fec.getMonth() - 1)];
+            var nm  = name_month[parseInt(fec.getMonth())];
 
             var aux = `${d} de ${nm.padEnd(9)}de ${fec.getFullYear()}`;
             for (var t = 0; t <= 4; t++) {
@@ -749,7 +739,7 @@ function showPlat(id = '', fec = '') {
     ka['k_flatware'] = k_flatware;
     $('#d_flatware').html(flatware(ka));
 
-    $('#ediv').html('Editar el ' + fec + '.<br />Para ' + time[t] + '.');
+    $('#ediv').html(time[t].capitalize() + ', ' + fec.trim() + '.');
 
     // Borrar los selecionados previamente
     $('select[multiple]').val([]);

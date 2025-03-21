@@ -33,12 +33,41 @@ body {
     color: #555;
     margin-right: 0.5vmax;
     vertical-align: middle;
-    
-    position: fixed;
-    top: 2vh; /* Empieza un poco más abajo del borde superior */
-    left: 95%; /* Centrado horizontal usando porcentajes */
-    z-index: 0;
 }
 .material-symbols-outlined:hover {
     font-weight: bold;
+}
+
+.edit .material-symbols-outlined {
+    font-size: 2vmax;
+}
+
+.win {
+    position: fixed;
+    flex-direction: column;
+    left: 70%; /* Centrado horizontal usando porcentajes */
+    top: 2vh; /* Empieza un poco más abajo del borde superior */
+    z-index: 0;
+
+    background: #ffffff;
+    padding: 1vmax;
+    border-radius: 1vmax;
+    box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.1);
+}
+
+.edit {
+    margin-top: 1vmax;
+    padding: 0.5vmax;
+    border:solid #000000 0.1vmax;
+    border-radius: 1vmax;
+    text-align: center;
+}
+
+select[multiple] {
+    width: 90%;
+    font-family: monospace;
+    margin-top:0.5vmax;
+    height:20vmax;
+    padding: 0.5vmax;
+    border-radius: 0.25vmax;
 }
