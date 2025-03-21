@@ -48,6 +48,7 @@ body {
     left: 70%; /* Centrado horizontal usando porcentajes */
     top: 2vh; /* Empieza un poco más abajo del borde superior */
     z-index: 0;
+    text-align: right;
 
     background: #ffffff;
     padding: 1vmax;
