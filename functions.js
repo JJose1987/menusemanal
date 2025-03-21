@@ -499,7 +499,7 @@ function plat(i_time = 0) {
             if (out[out.length - 1] == 'lentejas') {
                 kwargs['types'] = ['vegetable', 'other'];
                 kwargs['names'] = ['tomate', 'cebolla', 'pimiento', 'zanahoria'];
-                kwargs['nValues'] = 5;
+                kwargs['nValues'] = 4;
                 out = out.concat(getIngredients(kwargs));
 
                 kwargs['types'] = ['meat'];
@@ -509,7 +509,7 @@ function plat(i_time = 0) {
             } else if (out[out.length - 1] == 'alubias') {
                 kwargs['types'] = ['vegetable', 'other'];
                 kwargs['names'] = ['tomate', 'cebolla', 'pimiento', 'zanahoria', 'calabaza'];
-                kwargs['nValues'] = 5;
+                kwargs['nValues'] = 4;
                 out = out.concat(getIngredients(kwargs));
 
                 kwargs['types'] = ['meat'];

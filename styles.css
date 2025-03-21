@@ -71,3 +71,14 @@ select[multiple] {
     padding: 0.5vmax;
     border-radius: 0.25vmax;
 }
+
+/* Estilos para la version en smartphone */
+@media only screen and (max-width: 600px) {
+    select[multiple] {
+        height:3vmax;
+    }
+    
+    .win {
+        left: 60%; /* Centrado horizontal usando porcentajes */
+    }
+}
