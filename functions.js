@@ -152,17 +152,18 @@ var ingredients = [
     {type: 'dairy'     , name: 'requesón'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1]            , nweek: 01, uweek: 0, buy: 0},
     {type: 'dairy'     , name: 'cuajada'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1]            , nweek: 01, uweek: 0, buy: 0},
     {type: 'dairy'     , name: 'kefir'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1]            , nweek: 01, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'almendra'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'avellana'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'anacardo'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'cacahuete'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
+
+    {type: 'dried'     , name: 'almendra'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 02, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'avellana'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 02, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'anacardo'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 02, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'cacahuete'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 02, uweek: 0, buy: 0},
     {type: 'dried'     , name: 'castaña'        , months: [9, 10, 11]                           , times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
     {type: 'dried'     , name: 'dátil'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'nuez'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'nuez'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 02, uweek: 0, buy: 0},
     {type: 'dried'     , name: 'pasas'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
     {type: 'dried'     , name: 'piñón'          , months: [5, 6, 7, 8, 9]                       , times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
     {type: 'dried'     , name: 'pipas'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'pistacho'       , months: [5, 6, 7]                             , times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'pistacho'       , months: [5, 6, 7]                             , times: [0, 1, 3]      , nweek: 01, uweek: 0, buy: 0},
     {type: 'dried'     , name: 'sésamo'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
     
     {type: 'pasta'     , name: 'espaguetis'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
@@ -421,6 +422,8 @@ function plat(i_time = 0) {
         kwargs['names'] = ['cacao'];
         out = out.concat(getIngredients(kwargs));
         delete kwargs.names;
+        kwargs['types'] = ['dried'];
+        out = out.concat(getIngredients(kwargs));
         kwargs['types'] = ['fruit'];
         out = out.concat(getIngredients(kwargs));
 
