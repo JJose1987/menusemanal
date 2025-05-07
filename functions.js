@@ -64,7 +64,7 @@ var ingredients = [
     {type: 'fruit'     , name: 'caqui'          , months: [10, 11, 12, 0, 1]                    , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
     {type: 'fruit'     , name: 'caimito'        , months: [1, 2, 3]                             , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
     
-    {type: 'cereal'    , name: 'avena'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 2, 3]   , nweek: 07, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'avena'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0]            , nweek: 07, uweek: 0, buy: 0},
     {type: 'cereal'    , name: 'maíz'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
     {type: 'cereal'    , name: 'arroz'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
     {type: 'cereal'    , name: 'trigo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 2, 3, 4], nweek: 02, uweek: 0, buy: 0},
@@ -115,13 +115,13 @@ var ingredients = [
     {type: 'vegetable' , name: 'pepino'         , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
     {type: 'vegetable' , name: 'berro'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
     
-    {type: 'legume'    , name: 'garbanzos'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'lentejas'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'frijoles'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'judías verdes'  , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'alubias'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'garbanzos'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'lentejas'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'frijoles'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'judías verdes'  , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'alubias'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek: 02, uweek: 0, buy: 0},
     {type: 'legume'    , name: 'guisantes'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'soja'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 2, 4]      , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'soja'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1]            , nweek: 02, uweek: 0, buy: 0},
     
     {type: 'meat'      , name: 'ternera'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
     {type: 'meat'      , name: 'cerdo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
@@ -312,15 +312,15 @@ function flatware(kwargs = {html: true, rand: true, k_flatware : {0: [], 1: [], 
             aux = plat(++t);
             k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
 
-            ++t;
             aux = eat[[0, 1, 0, 1, 2, 3, 2, 3][i0]];
+            aux = plat(++t);
             k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
 
             aux = plat(++t);
             k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
 
-            ++t;
             aux = dinner[[0, 1, 0, 1, 2, 3, 2, 3][i0]];
+            aux = plat(++t);
             k_flatware[t][i0] = (aux.substring(0, aux.length - 1)).split(', ');
         }
     } else {
@@ -428,7 +428,7 @@ function plat(i_time = 0) {
         out = out.concat(getIngredients(kwargs));
 
     } else if (i_time == 1) {
-        kwargs['types'] = ['dairy'];
+        kwargs['types'] = ['dairy', 'legume'];
         out = out.concat(getIngredients(kwargs));
 
     } else if ((i_time == 2) || (i_time == 4)) {
@@ -543,8 +543,6 @@ function plat(i_time = 0) {
 
             kwargs['types'] = ['tuber', 'cereal'];
             kwargs['names'] = ['patata', 'arroz'];
-
-            delete kwargs.names;
             kwargs['nValues'] = 1;
             out = out.concat(getIngredients(kwargs));
 
@@ -633,7 +631,7 @@ function getIngredients(kwargs = {types: [], names: [], time: 0, nValues: 1}) {
             , 'ñame'     , 'camote'   , 'arracacha', 'acelga' , 'albahaca'  , 'apio'       , 'col de bruselas', 'col rizada' , 'espárrago' , 'puerro'  , 'rúcula'     , 'repollo' , 'rábano'   
             , 'remolacha', 'nabo'     , 'pepino'   , 'berro'  , 'conejo'    , 'trucha'     , 'bacalao'        , 'sardina'    , 'caballa'   , 'lenguado', 'mantequilla', 'requesón', 'cuajada'
             , 'sésamo'   , 'penne'    , 'fusilli'  , 'ravioli', 'fettuccine', 'tagliatelle', 'tortellini'     , 'pappardelle', 'conchiglie', 'farfalle', 'orecchiette', 'bucatini', 'fideuá'
-            , 'cavatelli', 'ditalini' , 'fregola'  , 'robalo' , 'mero'];
+            , 'cavatelli', 'ditalini' , 'fregola'  , 'robalo' , 'mero'      , 'papaya'     , 'anchova'];
 
     taux0 = $.grep(taux0, function(table) {
         return $.inArray(table.name, supr) === -1;
