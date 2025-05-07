@@ -23,180 +23,180 @@ var k_flatware = {0: [], 1: [], 2: [], 3: [], 4: []};
         Semillas & Frutos Secos
 */
 var ingredients = [
-    {type: 'fruit'     , name: 'manzana'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 2, 3, 4], nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'pera'           , months: [6, 7, 8, 9, 10, 11, 0, 1]            , times: [0, 1, 2, 3, 4], nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'naranja'        , months: [9, 10, 11, 0, 1, 2, 3, 4]            , times: [0, 1, 2, 3]   , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'mandarina'      , months: [10, 11, 0, 1, 2]                     , times: [1, 3]         , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'limón'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'plátano'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 2, 3]   , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'fresa'          , months: [2, 3, 4, 5]                          , times: [0, 1, 3, 4]   , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'cereza'         , months: [4, 5, 6]                             , times: [1]            , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'melocotón'      , months: [4, 5, 6, 7, 8]                       , times: [4]            , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'albaricoque'    , months: [4, 5, 6]                             , times: [0, 1, 2, 3, 4], nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'nectarina'      , months: [5, 6, 7]                             , times: [0, 1, 2, 3, 4], nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'ciruela'        , months: [5, 6, 7, 8]                          , times: [4]            , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'uva'            , months: [7, 8, 9, 10]                         , times: [1, 2, 3]      , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'kiwi'           , months: [9, 10, 11, 0, 1, 2, 3, 4]            , times: [0, 1, 2, 3, 4], nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'granada'        , months: [9, 10, 11, 0]                        , times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'mango'          , months: [4, 5, 6, 7, 8]                       , times: [0, 2]         , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'papaya'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'piña'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 2]      , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'sandía'         , months: [5, 6, 7, 8]                          , times: [2, 3]         , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'melón'          , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'higo'           , months: [6, 7, 8]                             , times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'coco'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'frambuesa'      , months: [5, 6, 7, 8, 9]                       , times: [1]            , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'mora'           , months: [6, 7, 8]                             , times: [1]            , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'grosella'       , months: [5, 6, 7]                             , times: [1]            , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'arándano'       , months: [5, 6, 7, 8]                          , times: [1, 3]         , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'guayaba'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'chirimoya'      , months: [9, 10, 11, 0, 1, 2, 3]               , times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'lichi'          , months: [4, 5, 6, 7]                          , times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'carambola'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'maracuyá'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'durazno'        , months: [5, 6, 7, 8]                          , times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'pitahaya'       , months: [5, 6, 7, 8, 9, 10]                   , times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'tamarindo'      , months: [0, 1, 2, 3, 4, 5]                    , times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'membrillo'      , months: [8, 9, 10]                            , times: [2, 3, 4]      , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'pomelo'         , months: [9, 10, 11, 0, 1, 2]                  , times: [0, 1, 2, 3, 4], nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'aguacate'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [4]            , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'zapote'         , months: [1, 2, 3, 4]                          , times: []             , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'caqui'          , months: [10, 11, 12, 0, 1]                    , times: [1, 2, 4]      , nweek: 35, uweek: 0, buy: 0},
-    {type: 'fruit'     , name: 'caimito'        , months: [1, 2, 3]                             , times: []             , nweek: 35, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'manzana'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3, 4]   , nweek: 21, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'pera'           , months: [6, 7, 8, 9, 10, 11, 0, 1]            , times: [0, 1, 3]      , nweek: 21, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'naranja'        , months: [9, 10, 11, 0, 1, 2, 3, 4]            , times: [0, 1, 3]      , nweek: 21, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'mandarina'      , months: [10, 11, 0, 1, 2]                     , times: [0, 1, 3]      , nweek: 21, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'limón'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 2, 3]      , nweek: 21, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'plátano'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 2]      , nweek: 21, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'fresa'          , months: [2, 3, 4, 5]                          , times: [0, 1, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'cereza'         , months: [4, 5, 6]                             , times: [0, 1, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'melocotón'      , months: [4, 5, 6, 7, 8]                       , times: [0, 1, 2, 3]   , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'albaricoque'    , months: [4, 5, 6]                             , times: [0, 1, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'nectarina'      , months: [5, 6, 7]                             , times: [0, 1, 2]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'ciruela'        , months: [5, 6, 7, 8]                          , times: [0, 1, 2]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'uva'            , months: [7, 8, 9, 10]                         , times: [0, 1, 3]      , nweek: 21, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'kiwi'           , months: [9, 10, 11, 0, 1, 2, 3, 4]            , times: [0, 1, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'granada'        , months: [9, 10, 11, 0]                        , times: [0, 1, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'mango'          , months: [4, 5, 6, 7, 8]                       , times: [0, 2, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'papaya'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 2, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'piña'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 2, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'sandía'         , months: [5, 6, 7, 8]                          , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'melón'          , months: [5, 6, 7, 8]                          , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'higo'           , months: [6, 7, 8]                             , times: [0, 1, 2, 3]   , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'coco'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 2, 3]   , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'frambuesa'      , months: [5, 6, 7, 8, 9]                       , times: [0, 1, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'mora'           , months: [6, 7, 8]                             , times: [0, 1, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'grosella'       , months: [5, 6, 7]                             , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'arándano'       , months: [5, 6, 7, 8]                          , times: [0, 1, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'guayaba'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'chirimoya'      , months: [9, 10, 11, 0, 1, 2, 3]               , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'lichi'          , months: [4, 5, 6, 7]                          , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'carambola'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'maracuyá'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 2, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'durazno'        , months: [5, 6, 7, 8]                          , times: [0, 1, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'pitahaya'       , months: [5, 6, 7, 8, 9, 10]                   , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'tamarindo'      , months: [0, 1, 2, 3, 4, 5]                    , times: [2, 3]         , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'membrillo'      , months: [8, 9, 10]                            , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'pomelo'         , months: [9, 10, 11, 0, 1, 2]                  , times: [0, 2, 3]      , nweek: 14, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'aguacate'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 2, 4]      , nweek: 21, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'zapote'         , months: [1, 2, 3, 4]                          , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'caqui'          , months: [10, 11, 12, 0, 1]                    , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    {type: 'fruit'     , name: 'caimito'        , months: [1, 2, 3]                             , times: [0, 1, 3]      , nweek: 07, uweek: 0, buy: 0},
+    
+    {type: 'cereal'    , name: 'avena'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 2, 3]   , nweek: 07, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'maíz'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'arroz'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'trigo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 2, 3, 4], nweek: 02, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'cebada'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 2, 4]      , nweek: 02, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'quinoa'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'centeno'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 2, 3]      , nweek: 01, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'sorgo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'mijo'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 2, 3, 4]   , nweek: 01, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'amaranto'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 2, 3]   , nweek: 01, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'farro'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'cereal'    , name: 'espelta'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 2, 3, 4]   , nweek: 01, uweek: 0, buy: 0},
+    
+    {type: 'tuber'     , name: 'patata'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'tuber'     , name: 'batata'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'tuber'     , name: 'yuca'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'tuber'     , name: 'ñame'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'tuber'     , name: 'boniato'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'tuber'     , name: 'camote'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'tuber'     , name: 'arracacha'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    
+    {type: 'vegetable' , name: 'acelga'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'albahaca'       , months: [4, 5, 6, 7, 8]                       , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'apio'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'brócoli'        , months: [0, 1, 2, 3, 4, 5, 6, 9, 10, 11]      , times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'coliflor'       , months: [0, 1, 2, 3, 4, 5, 6, 9, 10, 11]      , times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'col de bruselas', months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'col rizada'     , months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'espárrago'      , months: [3, 4, 5, 6, 7]                       , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'espinaca'       , months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'lechuga'        , months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'perejil'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'puerro'         , months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'rúcula'         , months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'repollo'        , months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'tomate'         , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'zanahoria'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'alcachofa'      , months: [3, 4, 5, 6, 7]                       , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'berenjena'      , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'calabacín'      , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'chirivía'       , months: [0, 1, 2, 3, 4, 9, 10, 11]            , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'chícharo'       , months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'judía verde'    , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'pimiento'       , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'calabaza'       , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'rábano'         , months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'remolacha'      , months: [0, 1, 2, 3, 4, 9, 10, 11]            , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'nabo'           , months: [0, 1, 2, 3, 4, 9, 10, 11]            , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'pepino'         , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'berro'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    
+    {type: 'legume'    , name: 'garbanzos'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'lentejas'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'frijoles'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'judías verdes'  , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'alubias'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'guisantes'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'legume'    , name: 'soja'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 2, 4]      , nweek: 02, uweek: 0, buy: 0},
+    
+    {type: 'meat'      , name: 'ternera'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'meat'      , name: 'cerdo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'meat'      , name: 'conejo'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'meat'      , name: 'pollo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'meat'      , name: 'pavo'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    
+    {type: 'egg'       , name: 'huevo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 2, 4]      , nweek: 03, uweek: 0, buy: 0},
+    
+    {type: 'fish'      , name: 'atún'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'salmón'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'trucha'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'merluza'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'bacalao'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'sardina'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'robalo'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'dorada'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'caballa'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'lenguado'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'mero'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'pescadilla'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'fish'      , name: 'anchova'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    
+    {type: 'dairy'     , name: 'leche'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0]            , nweek: 07, uweek: 0, buy: 0},
+    {type: 'dairy'     , name: 'yogurt'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'dairy'     , name: 'queso'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'dairy'     , name: 'mantequilla'    , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1]            , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dairy'     , name: 'requesón'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1]            , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dairy'     , name: 'cuajada'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1]            , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dairy'     , name: 'kefir'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1]            , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'almendra'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'avellana'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'anacardo'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'cacahuete'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'castaña'        , months: [9, 10, 11]                           , times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'dátil'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'nuez'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'pasas'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'piñón'          , months: [5, 6, 7, 8, 9]                       , times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'pipas'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'pistacho'       , months: [5, 6, 7]                             , times: [1, 3]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'dried'     , name: 'sésamo'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 02, uweek: 0, buy: 0},
+    
+    {type: 'pasta'     , name: 'espaguetis'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'macarrones'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'penne'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'fusilli'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'ravioli'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'lasaña'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'fettuccine'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'tagliatelle'    , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'tortellini'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'pappardelle'    , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'canelones'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'conchiglie'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'farfalle'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'orecchiette'    , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'bucatini'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'gnocchi'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'fideuá'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'cavatelli'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'ditalini'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'fregola'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
+    {type: 'pasta'     , name: 'fideo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
 
-    {type: 'cereal'    , name: 'avena'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0]            , nweek:  7, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'maíz'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  0, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'arroz'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  4, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'trigo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  0, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'cebada'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  0, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'quinoa'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  4, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'centeno'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  0, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'sorgo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  0, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'mijo'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  0, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'amaranto'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  0, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'farro'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  0, uweek: 0, buy: 0},
-    {type: 'cereal'    , name: 'espelta'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  0, uweek: 0, buy: 0},
-
-    {type: 'tuber'     , name: 'patata'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  3, uweek: 0, buy: 0},
-    {type: 'tuber'     , name: 'batata'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  3, uweek: 0, buy: 0},
-    {type: 'tuber'     , name: 'yuca'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'tuber'     , name: 'ñame'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'tuber'     , name: 'boniato'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  3, uweek: 0, buy: 0},
-    {type: 'tuber'     , name: 'camote'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'tuber'     , name: 'arracacha'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-
-    {type: 'vegetable' , name: 'acelga'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'albahaca'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'apio'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'brócoli'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'coliflor'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'col de bruselas', months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'col rizada'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'espárrago'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'espinaca'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'lechuga'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'perejil'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'puerro'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'rúcula'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'repollo'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'tomate'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'zanahoria'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'alcachofa'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'berenjena'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'calabacín'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'chirivía'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'chícharo'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'judía verde'    , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'pimiento'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'calabaza'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'rábano'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'remolacha'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'nabo'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'pepino'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'berro'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 49, uweek: 0, buy: 0},
-
-    {type: 'legume'    , name: 'garbanzos'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek:  4, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'lentejas'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek:  4, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'frijoles'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  4, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'judías verdes'  , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek:  4, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'alubias'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek:  4, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'guisantes'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  4, uweek: 0, buy: 0},
-    {type: 'legume'    , name: 'soja'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek:  4, uweek: 0, buy: 0},
-
-    {type: 'meat'      , name: 'ternera'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  3, uweek: 0, buy: 0},
-    {type: 'meat'      , name: 'cerdo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  3, uweek: 0, buy: 0},
-    {type: 'meat'      , name: 'conejo'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  0, uweek: 0, buy: 0},
-    {type: 'meat'      , name: 'pollo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  3, uweek: 0, buy: 0},
-    {type: 'meat'      , name: 'pavo'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  3, uweek: 0, buy: 0},
-
-    {type: 'egg'       , name: 'huevo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  7, uweek: 0, buy: 0},
-
-    {type: 'fish'      , name: 'atún'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  4, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'salmón'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  4, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'trucha'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  4, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'merluza'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  0, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'bacalao'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  0, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'sardina'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  4, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'robalo'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  0, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'dorada'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  4, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'caballa'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  4, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'lenguado'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  0, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'mero'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  0, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'pescadilla'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]             , nweek:  0, uweek: 0, buy: 0},
-    {type: 'fish'      , name: 'lubina'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]             , nweek:  4, uweek: 0, buy: 0},
-
-    {type: 'dairy'     , name: 'leche'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0]            , nweek:  7, uweek: 0, buy: 0},
-    {type: 'dairy'     , name: 'yogurt'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1]            , nweek: 14, uweek: 0, buy: 0},
-    {type: 'dairy'     , name: 'queso'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 14, uweek: 0, buy: 0},
-    {type: 'dairy'     , name: 'mantequilla'    , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek: 14, uweek: 0, buy: 0},
-    {type: 'dairy'     , name: 'requesón'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 14, uweek: 0, buy: 0},
-    {type: 'dairy'     , name: 'cuajada'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1, 3]         , nweek: 14, uweek: 0, buy: 0},
-    {type: 'dairy'     , name: 'kefir'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [1]            , nweek: 14, uweek: 0, buy: 0},
-
-    {type: 'dried'     , name: 'almendra'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'avellana'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'anacardo'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'cacahuete'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'castaña'        , months: [9, 10, 11]                           , times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'dátil'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'nuez'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'pasas'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'piñón'          , months: [5, 6, 7, 8, 9]                       , times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'pipas'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'pistacho'       , months: [5, 6, 7]                             , times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-    {type: 'dried'     , name: 'sésamo'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1, 3]      , nweek: 49, uweek: 0, buy: 0},
-
-    {type: 'pasta'     , name: 'espaguetis'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'macarrones'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'penne'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'fusilli'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'ravioli'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'lasaña'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'fettuccine'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'tagliatelle'    , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'tortellini'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'pappardelle'    , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'canelones'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'conchiglie'     , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'farfalle'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'orecchiette'    , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'bucatini'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'gnocchi'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'fideuá'         , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2]            , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'cavatelli'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'ditalini'       , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'fregola'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: []             , nweek:  3, uweek: 0, buy: 0},
-    {type: 'pasta'     , name: 'fideo'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek:  3, uweek: 0, buy: 0},
-
-    {type: 'other'     , name: 'ajo'            , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'other'     , name: 'cebolla'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'other'     , name: 'champiñon'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 49, uweek: 0, buy: 0},
-    {type: 'other'     , name: 'cacao'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0]            , nweek: 21, uweek: 0, buy: 0}
+    {type: 'other'     , name: 'ajo'            , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'other'     , name: 'cebolla'        , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 03, uweek: 0, buy: 0},
+    {type: 'other'     , name: 'champiñon'      , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'other'     , name: 'cacao'          , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0, 1]         , nweek: 07, uweek: 0, buy: 0},
+    {type: 'other'     , name: 'miel'           , months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], times: [0]            , nweek: 01, uweek: 0, buy: 0}
 ];
 // Funciones
 function main() {
     // Generar aleatorio
-    $('.material-symbols-outlined:contains("flatware")').on('click', function(e) {        
+    $('.material-symbols-outlined:contains("flatware")').on('click', function(e) {
         $('.edit').hide();
         k_id = '';
 
@@ -225,7 +225,7 @@ function main() {
     $('.material-symbols-outlined:contains("close")').on('click', function(e) {
         $('.edit').hide();
         k_id = '';
-        
+
         ka['html'] = true;
         ka['rand'] = false;
         $('#d_flatware').html(flatware(ka));
@@ -418,14 +418,14 @@ function plat(i_time = 0) {
         kwargs['types'] = ['cereal'];
         out = out.concat(getIngredients(kwargs));
         kwargs['types'] = ['other' ];
+        kwargs['names'] = ['cacao'];
         out = out.concat(getIngredients(kwargs));
-        kwargs['types'] = ['dried' ];
+        delete kwargs.names;
+        kwargs['types'] = ['fruit'];
         out = out.concat(getIngredients(kwargs));
 
     } else if (i_time == 1) {
         kwargs['types'] = ['dairy'];
-        out = out.concat(getIngredients(kwargs));
-        kwargs['types'] = ['dried' ];
         out = out.concat(getIngredients(kwargs));
 
     } else if ((i_time == 2) || (i_time == 4)) {
@@ -437,7 +437,7 @@ function plat(i_time = 0) {
             out = out.concat(getIngredients(kwargs));
 
             kwargs['types'] = ['other'];
-            kwargs['names'] = ['cebolla', 'ajo']
+            kwargs['names'] = ['cebolla', 'ajo'];
             out = out.concat(getIngredients(kwargs));
 
             kwargs['types'] = ['vegetable', 'other', 'legume'];
@@ -547,15 +547,16 @@ function plat(i_time = 0) {
 
             kwargs['names'] = ['naranja', 'mandarina', 'kiwi', 'pomelo', 'mango', 'melón'];
         }
+        
+        kwargs['types'] = ['fruit' ];
+        kwargs['nValues'] = 1;
+        out = out.concat(getIngredients(kwargs));
 
     } else if (i_time == 3) {
-        kwargs['types'] = ['dried' ];
+        kwargs['types'] = ['dried'];
+        kwargs['nValues'] = 3;
         out = out.concat(getIngredients(kwargs));
     }
-
-    kwargs['types'] = ['fruit' ];
-    kwargs['nValues'] = 1;
-    out = out.concat(getIngredients(kwargs));
 
     return out.join(', ') + '.';
 }
@@ -622,6 +623,20 @@ function getIngredients(kwargs = {types: [], names: [], time: 0, nValues: 1}) {
             });
         });
     }
+    
+    /* Eliminamos lo menos comun que usamos en la cocina */
+    var supr = ['limón'  , 'granada'  , 'higo'     , 'coco'   , 'grosella'  , 'guayaba'    , 'chirimoya'      , 'lichi'      , 'carambola' , 'maracuyá', 'durazno'    , 'pitahaya', 'tamarindo'
+            , 'membrillo', 'zapote'   , 'caimito'  , 'maíz'   , 'trigo'     , 'cebada'     , 'centeno'        , 'sorgo'      , 'mijo'      , 'amaranto', 'farro'      , 'espelta' , 'yuca'      
+            , 'ñame'     , 'camote'   , 'arracacha', 'acelga' , 'albahaca'  , 'apio'       , 'col de bruselas', 'col rizada' , 'espárrago' , 'puerro'  , 'rúcula'     , 'repollo' , 'rábano'   
+            , 'remolacha', 'nabo'     , 'pepino'   , 'berro'  , 'conejo'    , 'trucha'     , 'bacalao'        , 'sardina'    , 'caballa'   , 'lenguado', 'mantequilla', 'requesón', 'cuajada'
+            , 'sésamo'   , 'penne'    , 'fusilli'  , 'ravioli', 'fettuccine', 'tagliatelle', 'tortellini'     , 'pappardelle', 'conchiglie', 'farfalle', 'orecchiette', 'bucatini', 'fideuá'
+            , 'cavatelli', 'ditalini' , 'fregola'  , 'robalo' , 'mero'];
+
+    taux0 = $.grep(taux0, function(table) {
+        return $.inArray(table.name, supr) === -1;
+    });
+    /**/
+    
 
     // Filtramos la hora en la que se come
     if (typeof kwargs['time'] != 'undefined') {
