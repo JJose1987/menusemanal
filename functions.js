@@ -106,7 +106,7 @@ var ingredients = [
     {type: 'vegetable' , name: 'calabacín'      , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
     {type: 'vegetable' , name: 'chirivía'       , months: [0, 1, 2, 3, 4, 9, 10, 11]            , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
     {type: 'vegetable' , name: 'chícharo'       , months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
-    {type: 'vegetable' , name: 'judía verde'    , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
+    {type: 'vegetable' , name: 'judía verde'    , months: [5, 6, 7, 8]                          , times: [2]            , nweek: 02, uweek: 0, buy: 0},
     {type: 'vegetable' , name: 'pimiento'       , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
     {type: 'vegetable' , name: 'calabaza'       , months: [5, 6, 7, 8]                          , times: [2, 4]         , nweek: 02, uweek: 0, buy: 0},
     {type: 'vegetable' , name: 'rábano'         , months: [0, 1, 2, 3, 4, 5, 9, 10, 11]         , times: [2, 4]         , nweek: 01, uweek: 0, buy: 0},
